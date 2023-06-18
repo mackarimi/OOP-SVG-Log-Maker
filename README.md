@@ -74,6 +74,11 @@ Run tests and check results: After defining the test cases, you can run the test
 
 Look at the test results: Look at the test results to see if there were any failures or mistakes. Tests that didn't pass show that the SVG Logo Maker might have problems with how it works with shapes. Review the failed tests and find out why they failed so that any bugs or strange behavior can be fixed.
 
+![passed-test](/assets/passed_test.svg.jpg)
+![triangle](/assets/triangle_logo.svg.jpg)
+![circle](/assets/circle_logo.svg.jpg)
+![square](/assets/square_logo.svg.jpg)
+
 ## Credits
 
 Special thanks to :
@@ -94,4 +99,4 @@ Visual Studio Code Extension - SVG: The mentioned Visual Studio Code extension i
 
 This project is deployed at [https://github.com/mackarimi/OOP-SVG-Log-Maker].
 
-Video of the deployed: https://www.loom.com/share/8ac09ea3bd14482eb4c77a9b88cd36a5?sid=60b29a79-eaf7-439e-aa30-a2f077df66b1
+Video of the deployed:https://www.loom.com/share/f97a145fa0984317b2fb1237ba407bbd?sid=4fd5658d-328b-4bba-b9f6-40a5669a8598
