@@ -1,5 +1,8 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const path = require("path");
+// save the logo.svg file inside example folder
+const { Triangle, Circle, Square } = require("./lib/shapes");
 
 inquirer
   .prompt([
@@ -47,14 +50,31 @@ inquirer
     `;
     // error handling for invalid input
 
-    fs.writeFile("logo.svg", svg, (err) => {
-      if (err) throw err;
+    // Create the "Example" folder if it doesn't exist
+    const exampleFolderPath = path.join(__dirname, "Example");
+    fs.mkdirSync(exampleFolderPath, { recursive: true });
 
-      console.log("Bravo! Your logo has been saved");
-
-      fs.readFile("logo.svg", "utf8", (err, data) => {
-        if (err) throw err;
-        console.log(data);
-      });
-    });
+    // Save the logo.svg file with individual shape names
+    if (answers.shape === "Triangle") {
+      const triangleFilePath = path.join(
+        exampleFolderPath,
+        "logo_triangle.svg"
+      );
+      fs.writeFileSync(triangleFilePath, svg);
+      console.log(
+        "Bravo! Your logo has been inside Example folder under logo_triangle.svg"
+      );
+    } else if (answers.shape === "Circle") {
+      const circleFilePath = path.join(exampleFolderPath, "logo_circle.svg");
+      fs.writeFileSync(circleFilePath, svg);
+      console.log(
+        "Bravo! Your logo has been inside Example folder under logo_circle.svg"
+      );
+    } else if (answers.shape === "Square") {
+      const squareFilePath = path.join(exampleFolderPath, "logo_square.svg");
+      fs.writeFileSync(squareFilePath, svg);
+      console.log(
+        "Bravo! Your logo has been inside Example folder under logo_square.svg"
+      );
+    }
   });
